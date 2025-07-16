@@ -22,7 +22,7 @@ npm install -g suzu-mcp
 
 2. **Add to Claude Code**:
 ```bash
-claude mcp add suzu suzu-mcp
+claude mcp add suzu suzu
 ```
 
 Or **install locally**:
@@ -39,18 +39,38 @@ Or manually add to `~/.config/claude/claude_desktop_config.json`:
 {
   "mcpServers": {
     "suzu": {
-      "command": "suzu-mcp"
+      "command": "suzu"
     }
   }
 }
 ```
 
-3. **Auto-approve notifications** (optional):
-   - When prompted, select "Yes, and don't ask again for suzu commands"
-   - Or add to `~/.config/claude/settings.json`:
+3. **Auto-approve notifications** (required for seamless experience):
+   
+   **Option 1 - One-time approval (Recommended)**:
+   - When first prompted, select "Yes, and don't ask again for suzu commands"
+   - This permanently approves suzu notifications without future prompts
+   
+   **Option 2 - Configuration file**:
+   Add to `~/.config/claude/settings.json`:
    ```json
    {
      "enableAllProjectMcpServers": true
+   }
+   ```
+   
+   **Option 3 - Tool-specific approval**:
+   Add to your `~/.config/claude/claude_desktop_config.json`:
+   ```json
+   {
+     "mcpServers": {
+       "suzu": {
+         "command": "suzu"
+       }
+     },
+     "toolUseConfirmation": {
+       "suzu": "never"
+     }
    }
    ```
 
@@ -60,9 +80,12 @@ Or manually add to `~/.config/claude/claude_desktop_config.json`:
    # Claude Code Configuration
    
    ## Default Behavior
-   - Always call `task_completed` when finishing tasks if the chime MCP server is available
+   - Always call `task_completed` when finishing tasks if the suzu MCP server is available
    - Play completion notifications automatically without being asked
+   - Use gentle bell sounds for task completion feedback
    ```
+   
+   **Important**: After setup, restart Claude Code for all changes to take effect.
 
 ## 🎯 Usage
 

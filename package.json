@@ -1,0 +1,36 @@
+{
+  "name": "suzu-mcp",
+  "version": "1.0.0",
+  "description": "Suzu (鈴) - MCP server for Claude Code task completion notifications with gentle chime sounds",
+  "main": "dist/index.js",
+  "bin": {
+    "suzu": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["mcp", "claude", "notification", "chime", "bell", "japanese", "suzu"],
+  "author": "Artem Denysov",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/denar90/suzu-mcp.git"
+  },
+  "homepage": "https://github.com/denar90/suzu-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/denar90/suzu-mcp/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "node-notifier": "^10.0.1",
+    "play-sound": "^1.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  }
+}

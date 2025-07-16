@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "suzu": {
+      "command": "node",
+      "args": ["dist/index.js"],
+      "cwd": "/Users/artemdenysov/CascadeProjects/claude-notification-mcp"
+    }
+  }
+}

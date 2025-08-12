@@ -1,0 +1,9 @@
+src/
+*.ts
+!*.d.ts
+tsconfig.json
+.git/
+app/
+suzu-config.json
+settings.json
+SPOTIFY_SETUP.md

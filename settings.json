@@ -1,0 +1,10 @@
+{
+  "hooks": [
+    {
+      "matcher": {
+        "event": "Notification"
+      },
+      "command": "afplay /System/Library/Sounds/Ping.aiff"
+    }
+  ]
+}

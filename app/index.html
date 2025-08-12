@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suzu - Get Spotify Token</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        h1 { text-align: center; margin-bottom: 30px; }
+        .bell { font-size: 2em; margin-right: 10px; }
+        .step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        button:hover { background: #764ba2; transform: translateY(-2px); }
+        button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .token-display {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            word-break: break-all;
+            font-family: monospace;
+            margin: 15px 0;
+            display: none;
+        }
+        .success { background: rgba(30, 215, 96, 0.3); }
+        .error { background: rgba(231, 76, 60, 0.3); }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span class="bell">🔔</span>Suzu - Get Spotify Token</h1>
+        
+        <div id="step1" class="step">
+            <h3>Step 1: Authorize Spotify</h3>
+            <p>Click the button below to authorize Suzu to control your Spotify playback.</p>
+            <p><strong>Requirements:</strong></p>
+            <ul>
+                <li>Spotify Premium account</li>
+                <li>Spotify app open on your device</li>
+            </ul>
+            <button id="authBtn">
+                🎵 Authorize with Spotify
+            </button>
+        </div>
+
+        <div id="step2" class="step hidden">
+            <h3>Step 2: Copy Your Token</h3>
+            <p>Your Spotify access token (expires in 1 hour):</p>
+            <div id="tokenDisplay" class="token-display"></div>
+            <button id="copyBtn">📋 Copy Token</button>
+            <button id="testBtn">🎵 Test Playback</button>
+        </div>
+
+        <div id="step3" class="step hidden">
+            <h3>Step 3: Configure Suzu</h3>
+            <p>Tell Claude:</p>
+            <div class="token-display">
+                "Configure Spotify with access token: [YOUR_TOKEN]"
+            </div>
+            <p>Or use the configure tool directly in Claude Code.</p>
+        </div>
+
+        <div id="status"></div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>

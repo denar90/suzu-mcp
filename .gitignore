@@ -5,3 +5,10 @@ dist/
 .env
 .vscode/
 *.tgz
+# Local Netlify folder
+.netlify
+
+# Config files with sensitive data
+claude-config.json
+suzu-config.json
+*-config.json

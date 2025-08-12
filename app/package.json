@@ -1,0 +1,19 @@
+{
+  "name": "suzu-spotify-auth",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@netlify/functions": "^2.0.0",
+    "dotenv": "^17.2.1"
+  },
+  "devDependencies": {
+    "@netlify/vite-plugin": "^2.5.4",
+    "netlify-cli": "^17.0.0",
+    "vite": "^5.0.0"
+  }
+}
